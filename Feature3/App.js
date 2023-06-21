@@ -8,6 +8,14 @@ import {
   function App() {
     return html`
     <${Post} />
+    <form>
+        <input type="text" name="whatever1" placeholder="Enter post" />
+        <input type="submit" value="Submit" />
+    </form>
+    <form>
+        <input type="text" name="whatever2" placeholder="Enter something" />
+        <input type="submit" value="Submit" />
+    </form>
     `;
   }
   
