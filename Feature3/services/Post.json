@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "user": "User 1",
+        "title": "My Post",
+        "qualif": "PhD",
+        "date": "2019-04-01",
+        "content": "Ipsus Lorem ipsum",
+        "score": "5",
+        "comments": [
+            {
+                "id": "1",
+                "name": "User 2",
+                "date": "2019-04-01",
+                "content": "Ipsus Lorem ipsum"
+            },
+            {
+                "id": "2",
+                "name": "User 3",
+                "date": "2019-04-01",
+                "content": "Ipsus Lorem ipsum"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "user": "User 2",
+        "title": "My second Post",
+        "qualif": "PhD",
+        "date": "2019-04-01",
+        "content": "Ipsus Lorem ipsum",
+        "score": "4",
+        "comments": [
+            {
+                "id": "1",
+                "name": "User 1",
+                "date": "2019-04-01",
+                "content": "Ipsus Lorem ipsum"
+            },
+            {
+                "id": "2",
+                "name": "User 3",
+                "date": "2019-04-01",
+                "content": "Ipsus Lorem ipsum"
+            }
+        ]
+
+
+    }
+]
