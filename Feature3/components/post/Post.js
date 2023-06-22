@@ -4,7 +4,12 @@ import {
     useState
 } from "https://unpkg.com/htm/preact/standalone.module.js";
 
-
+/*
+This is the main script file for the app.
+It is confusingly named
+Don't let that thow you off.
+It relies on useEffect to get the posts from our axios service.
+*/
 import { getAllPosts } from "../../services/Post.js";
 import PostList from "./PostList.js";
 

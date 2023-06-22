@@ -6,6 +6,10 @@ import {
   import Post from "./components/post/Post.js";
   
   function App() {
+    /*The forms will eventually have a search advanced funcitonality*/
+
+    /*Need to add a navbar (later)*/
+
     return html`
     <${Post} />
     <form>
@@ -20,4 +24,18 @@ import {
   }
   
   render(html` <${App} /> `, document.getElementById("app"));
+
+  /*
+    Here is a dino
+                            . - ~ ~ ~ - .
+      ..     _      .-~               ~-.
+     //|     \ `..~                      `.
+    || |      }  }              /       \  \
+(\   \\ \~^..'                 |         }  \
+ \`.-~  o      /       }       |        /    \
+ (__          |       /        |       /      `.
+  `- - ~ ~ -._|      /_ - ~ ~ ^|      /- _      `.
+              |     /          |     /     ~-.     ~- _
+              |_____|          |_____|         ~ - . _ _~_-_
+  */
   

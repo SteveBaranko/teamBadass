@@ -5,7 +5,13 @@ import CommentOn from "./CommentOn.js";
 
 
 const PostList = ({ posts }) => {
+    /*
+    This is the never ending list of posts.
+    This is a stateless component
+    It will map to the post table of our database
+    */
     return html`
+    <!-- NOTE: this maps to all of our components -->
         <div>
             <hr />
             This is the stateless child component with list
