@@ -1,7 +1,7 @@
 import React from "react";
-import LikeButton from "./LikeButton.jsx";
-import DislikeButton from "./DislikeButton.jsx";
-import CommentOn from "./CommentOn.jsx";
+import LikeButton from "./LikeButton";
+import DislikeButton from "./DislikeButton";
+import CommentOn from "./CommentOn";
 
 const PostList = ({ posts }) => {
   /*
@@ -13,17 +13,22 @@ const PostList = ({ posts }) => {
     <div>
       <hr />
       This is the stateless child component with list
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
-            <h3>{post.title}</h3>
-            <p>{post.content}</p>
-            <LikeButton data="like" onClick={() => alert("Liked!")} />
-            <DislikeButton data="dislike" onClick={() => window.confirm("Are you sure?")} />
-            <CommentOn data="Comment" onClick={() => prompt("Enter your comment")} />
-          </li>
-        ))}
-      </ul>
+      <div>
+        {posts.length > 0 && (
+        <ul>
+          {posts.map((the_post) => (
+            <li key={the_post.id}>
+              {" "}
+              <h3>{the_post.title}</h3>
+              <p>{the_post.content}</p>
+              <LikeButton data="like" onClick={() => alert("Liked!")} />
+              <DislikeButton data="dislike" onClick={() => window.confirm("Are you sure?")} />
+              <CommentOn data="Comment" onClick={() => prompt("Enter your comment")} />
+            </li>
+          ))}
+        </ul>
+        )}
+      </div>{" "}
     </div>
   );
 };
