@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAllPosts } from "../../services/Post.jsx";
+import { getAllPosts } from "../../services/PostMethods.jsx";
 import PostList from "./PostList";
 
 const Post = () => {
@@ -13,7 +13,6 @@ const Post = () => {
 
   return (
     <div>
-      <h1 className="text-2z1">Barli</h1>
       <PostList posts={posts} />
     </div>
   );

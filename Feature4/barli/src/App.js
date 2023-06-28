@@ -1,5 +1,5 @@
 import React from "react";
-import Post from "./components/post/Post";
+import Components from "./components/Components.jsx";
 import * as Env from "./environment"
 import Parse from "parse"
 
@@ -14,17 +14,9 @@ function App() {
 
   return (
     <div>
-      <Post />
-      <form class="bg-green-200 p-4">
-        {/* Input form for "whatever1" */}
-        <input type="text" name="whatever1" placeholder="Enter post" />
-        <input type="submit" value="Submit" />
-      </form>
-      <form>
-        {/* Input form for "whatever2" */}
-        <input type="text" name="whatever2" placeholder="Enter something" />
-        <input type="submit" value="Submit" />
-      </form>
+      <h1 className="text-2z1">Barli</h1>
+      <Components />
+
     </div>
   );
 }

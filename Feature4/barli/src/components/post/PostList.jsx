@@ -1,34 +1,85 @@
-import React from "react";
-import LikeButton from "./LikeButton";
-import DislikeButton from "./DislikeButton";
-import CommentOn from "./CommentOn";
+import React, { useEffect, useState } from "react";
+import { getAllPosts, createPost, deletePost } from "../../services/PostMethods.jsx";
+import PostForm from "./PostForm";
 
-const PostList = ({ posts }) => {
-  /*
-  This is the never-ending list of posts.
-  This is a stateless component
-  It will map to the post table of our database
-  */
+const PostList = () => {
+  const [posts, setPosts] = useState([]);
+  const [content, setContent] = useState("");
+  const [add, setAdd] = useState(false);
+  const [remove, setRemove] = useState("");
+
+  useEffect(() => {
+    getAllPosts().then((data) => {
+      setPosts(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (add && content) {
+
+      const the_post = { content: content };
+      createPost(the_post)
+        .then((data) => {
+          console.log("Post created:", data);
+          setPosts([...posts, data]);
+        }
+        )
+      setAdd(false);
+    }
+    if (remove.length > 0) {
+      const newPosts = posts.filter((post) => post.id !== remove);
+      setPosts(newPosts);
+      deletePost(remove)
+        .then(() => {
+          console.log("Post deleted:", remove);
+        })
+        .catch((error) => {
+          console.log("Error deleting post:", error);
+        });
+      setRemove("");
+    }
+  }, [add, remove, content, posts]);
+
+
+  const onClick = (event) => {
+    event.preventDefault();
+    setAdd(true);
+  };
+
+  const onChange = (event) => {
+    event.preventDefault();
+    setContent(event.target.value);
+  };
+
   return (
     <div>
       <hr />
-      This is the stateless child component with list
+      This is the PostList component.
       <div>
         {posts.length > 0 && (
-        <ul>
-          {posts.map((the_post) => (
-            <li key={the_post.id}>
-              {" "}
-              <h3>{the_post.title}</h3>
-              <p>{the_post.content}</p>
-              <LikeButton data="like" onClick={() => alert("Liked!")} />
-              <DislikeButton data="dislike" onClick={() => window.confirm("Are you sure?")} />
-              <CommentOn data="Comment" onClick={() => prompt("Enter your comment")} />
-            </li>
-          ))}
-        </ul>
+          <ul>
+            {posts.map((post) => (
+              <div key={post.id}>
+                <span>
+                  <li>{post.get("content")}</li>
+                  <button onClick={() => setRemove(post.id)}>Delete</button>
+                </span>
+              </div>
+            ))}
+          </ul>
         )}
-      </div>{" "}
+      </div>
+      <div>
+        <p>Post by ID</p>
+        {posts.length > 0 && (
+          <ul>
+            {posts.map((post) => (
+              <li key={post.id}>{post.id}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <PostForm onClick={onClick} onChange={onChange} />
     </div>
   );
 };
