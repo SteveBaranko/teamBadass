@@ -5,7 +5,7 @@ This is the service file for the Post component.
 It will be used to get the posts from the database (eventually).
 Right now it hosts our JSON with Axios.
 */
-
+//As demonstrated by prof. Wicks
 export const createPost = (the_post) => {
 
   

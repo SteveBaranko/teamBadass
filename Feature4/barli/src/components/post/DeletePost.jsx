@@ -8,4 +8,4 @@ export default function DeletePost({ data, onClick }) {
         </div>
     );
 }
-    
+//not in use

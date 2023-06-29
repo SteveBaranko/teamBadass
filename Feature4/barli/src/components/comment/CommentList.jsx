@@ -2,6 +2,12 @@ import React, { useEffect, useState } from "react";
 import { getAllComments, createComment, deleteComment } from "../../services/CommentMethods";
 import CommentForm from "./CommentForm";
 
+
+/*
+  Same functionality as PostList.jsx, but with comments instead of posts.
+
+*/
+//TODO, Actually add relation to posts (this thing will die)
 const CommentList = () => {
   const [comments, setComments] = useState([]);
   const [content, setContent] = useState("");

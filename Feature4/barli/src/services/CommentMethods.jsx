@@ -1,5 +1,5 @@
 import Parse from 'parse';
-
+//Basically copied from PostMethods.jsx
 export const createComment = (the_comment) => {
   const Comment = Parse.Object.extend('Comment');
   const comment = new Comment();

@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { getAllPosts, createPost, deletePost } from "../../services/PostMethods";
 import PostForm from "./PostForm";
 
+/*
+This is a stateful list component for the Post
+*/
+//as demonstrated by prof. Wicks
 const PostList = () => {
   const [posts, setPosts] = useState([]);
   const [content, setContent] = useState("");

@@ -1,7 +1,6 @@
 import React from "react";
-import { useState } from "react";
-
-const CommentForm = ({ onChange, onClick }) => {
+/*This is the same thing as the PostForm.jsx in the post folder but it is for the comment section*/
+const PostForm = ({ onChange, onClick }) => {
   return (
     <div className="mt-4">
       <hr className="mb-4" />
@@ -16,11 +15,11 @@ const CommentForm = ({ onChange, onClick }) => {
           type="submit"
           onClick={onClick}
         >
-          Submit
+          Add Post
         </button>
       </form>
     </div>
   );
 };
 
-export default CommentForm;
+export default PostForm;

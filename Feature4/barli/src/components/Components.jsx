@@ -7,6 +7,9 @@ import About from "./About";
 import Home from "./Home";
 import CommentPage from "./CommentPage";
 
+/*
+This is the main component that will be rendered in the index.js file.
+*/
 function Components() {
   return (
     <div>

@@ -14,4 +14,4 @@ export default function LikeButton({ data, onClick }) {
   );
 }
 
-// Path: src/components/post/Post.js
+// not in use

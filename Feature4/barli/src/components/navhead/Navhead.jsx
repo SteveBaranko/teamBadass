@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+//This will be the header for the website (always on top)
 const Navhead = () => {
   return (
     <div className="bg-gray-800 py-4">

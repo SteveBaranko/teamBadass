@@ -1,5 +1,7 @@
 import React from 'react';
-
+/* 
+This is our about page
+*/
 export default function About() {
   return (
     <section className="bg-gray-100 p-8 rounded">
