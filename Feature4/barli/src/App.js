@@ -6,7 +6,7 @@ import Parse from "parse"
 Parse.initialize(Env.APP_ID, Env.JS_KEY);
 Parse.serverURL = Env.SERVER_URL;
 
-function App() {
+export default function App() {
   
   /* The forms will eventually have a search advanced functionality */
 
@@ -14,11 +14,8 @@ function App() {
 
   return (
     <div>
-      <h1 className="text-2z1">Barli</h1>
       <Components />
-
     </div>
   );
 }
 
-export default App;

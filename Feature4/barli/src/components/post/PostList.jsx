@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAllPosts, createPost, deletePost } from "../../services/PostMethods.jsx";
+import { getAllPosts, createPost, deletePost } from "../../services/PostMethods";
 import PostForm from "./PostForm";
 
 const PostList = () => {
@@ -16,14 +16,15 @@ const PostList = () => {
 
   useEffect(() => {
     if (add && content) {
-
       const the_post = { content: content };
       createPost(the_post)
         .then((data) => {
           console.log("Post created:", data);
           setPosts([...posts, data]);
-        }
-        )
+        })
+        .catch((error) => {
+          console.log("Error creating post:", error);
+        });
       setAdd(false);
     }
     if (remove.length > 0) {
@@ -37,9 +38,9 @@ const PostList = () => {
           console.log("Error deleting post:", error);
         });
       setRemove("");
+      setContent("");
     }
   }, [add, remove, content, posts]);
-
 
   const onClick = (event) => {
     event.preventDefault();
@@ -52,29 +53,22 @@ const PostList = () => {
   };
 
   return (
-    <div>
-      <hr />
-      This is the PostList component.
+    <div className="bg-gray-100 p-4 rounded">
+      <hr className="mb-4" />
+      <h2 className="text-xl font-bold mb-2">Post List</h2>
       <div>
         {posts.length > 0 && (
-          <ul>
+          <ul className="space-y-2">
             {posts.map((post) => (
-              <div key={post.id}>
-                <span>
-                  <li>{post.get("content")}</li>
-                  <button onClick={() => setRemove(post.id)}>Delete</button>
-                </span>
+              <div key={post.id} className="bg-white p-2 rounded">
+                <span className="text-gray-800">{post.get("content")}</span>
+                <button
+                  className="ml-2 text-sm text-red-500 hover:text-red-700"
+                  onClick={() => setRemove(post.id)}
+                >
+                  Delete
+                </button>
               </div>
-            ))}
-          </ul>
-        )}
-      </div>
-      <div>
-        <p>Post by ID</p>
-        {posts.length > 0 && (
-          <ul>
-            {posts.map((post) => (
-              <li key={post.id}>{post.id}</li>
             ))}
           </ul>
         )}

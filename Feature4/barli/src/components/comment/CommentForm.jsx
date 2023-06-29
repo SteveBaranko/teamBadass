@@ -22,5 +22,5 @@ const CommentForm = ({ onChange, onClick }) => {
     </div>
   );
 };
-
 export default CommentForm;
+
