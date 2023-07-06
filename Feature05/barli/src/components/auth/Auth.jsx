@@ -12,7 +12,7 @@ const AuthModule = () => {
     
     if (checkUser()) {
       alert("You are already logged in");
-      window.location.href = "/";
+      navigate("/");
     }
   }, []);
   
