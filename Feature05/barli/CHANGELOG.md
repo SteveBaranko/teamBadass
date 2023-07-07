@@ -1,3 +1,11 @@
+## [Version 0.3.0]
+  -TODO: start updating changelog for minor changes
+## Added 
+  -Auth that is dependent on Browser Cache (kinda yikes maybe fix)
+  -Advanced Routing 
+  -vibes
+
+
 ## [Version 0.2.0]
 ## Added 
   -Parse Database support (to be removed)
@@ -21,3 +29,4 @@
 
 ## Security
   -None lol
+
